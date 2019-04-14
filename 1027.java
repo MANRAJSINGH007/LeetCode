@@ -6,7 +6,6 @@ class Solution {
             return 1;
         }
         int max=2;
-        int dp[][]=new int[n][n];
         for(int i=0;i<n-1;i++){
             for(int j=i+1;j<n;j++){
                 int diff=arr[j]-arr[i];
