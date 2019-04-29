@@ -9,6 +9,8 @@
  */
 class Solution {
     
+    static HashMap<Integer,List<TreeNode>> map=new HashMap<>();
+    
     public static List<TreeNode> func(int n){
         
         if(n==0){
@@ -19,6 +21,10 @@ class Solution {
             List<TreeNode> list=new ArrayList<>();
             list.add(new TreeNode(0));
             return list;
+        }
+        
+        if(map.containsKey(n)){
+            return map.get(n);
         }
         
         List<TreeNode> list=new ArrayList<>();
@@ -37,12 +43,14 @@ class Solution {
             }
         }
         
+        map.put(n,list);
         return list;
         
     }
     
     public List<TreeNode> allPossibleFBT(int N) {
         
+        map=new HashMap<>();
         return func(N);
         
     }
