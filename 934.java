@@ -59,34 +59,35 @@ class Solution {
             }
         }
         
-        int min = Integer.MAX_VALUE;
-        
         while(q.size() > 0){
             Pair curr = q.remove();
-            if(grid[curr.x][curr.y] == 1) min = Math.min(min, curr.ans - 1);
             
             if(curr.x + 1 < n && ! visited[curr.x + 1][curr.y]){
                 visited[curr.x + 1][curr.y] = true;
                 q.add(new Pair(curr.x + 1, curr.y, curr.ans + 1));
+                if(grid[curr.x + 1][curr.y] == 1) return curr.ans;
             }
             
             if(curr.x - 1 > -1 && ! visited[curr.x - 1][curr.y]){
                 visited[curr.x - 1][curr.y] = true;
                 q.add(new Pair(curr.x - 1, curr.y, curr.ans + 1));
+                if(grid[curr.x - 1][curr.y] == 1) return curr.ans;
             }
             
             if(curr.y + 1 < m && ! visited[curr.x][curr.y + 1]){
                 visited[curr.x][curr.y + 1] = true;
                 q.add(new Pair(curr.x, curr.y + 1, curr.ans + 1));
+                if(grid[curr.x][curr.y + 1] == 1) return curr.ans;
             }
             
             if(curr.y - 1 > -1 && ! visited[curr.x][curr.y - 1]){
                 visited[curr.x][curr.y - 1] = true;
                 q.add(new Pair(curr.x, curr.y - 1, curr.ans + 1));
+                if(grid[curr.x][curr.y - 1] == 1) return curr.ans;
             }
         }
         
-        return min;
+        return -1;
         
     }
 }
