@@ -10,17 +10,12 @@ class Solution {
             if(s.charAt(i) == '.'){
                 
                 char left = '.';
-                
                 if(i != 0) left = ans[i - 1];
-                
                 if(left != 'R'){
                     
                     int r = i + 1;
-                    
                     while(r < n && s.charAt(r) == '.') r++;
-                    
                     if(r == n) return new String(ans);
-                    
                     if(s.charAt(r) == 'R'){
                         ans[r] = 'R';
                         i = r + 1;
@@ -34,6 +29,7 @@ class Solution {
                     ans[r] = s.charAt(r);
                     i = r + 1;
                 } 
+                
                 else{
                     
                     int r = i + 1;
@@ -61,8 +57,9 @@ class Solution {
                     
                     i = r;
                 }
-                
-            } else{
+            } 
+            
+            else{
                 ans[i] = s.charAt(i);
                 i++;
             }
