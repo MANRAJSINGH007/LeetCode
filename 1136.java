@@ -32,6 +32,6 @@ class Solution {
             }
         }
         for(int i = 1; i <= n; i++) max = Math.max(max, ans[i]);
-        return max;
+        return max; 
     }
 }
