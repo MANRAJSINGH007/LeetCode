@@ -40,7 +40,6 @@ class Solution {
                 l2 = end - 1;
             }
         }
-        
         return max;
     }
 }
