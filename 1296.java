@@ -1,7 +1,7 @@
 class Solution {
     public boolean isPossibleDivide(int[] nums, int k) {
         int n = nums.length;
-		if(k == 1) return true;
+	if(k == 1) return true;
         if(n % k != 0) return false;
         HashMap<Integer, Integer> map = new HashMap<>();
         ArrayList<Integer> list = new ArrayList<>();
