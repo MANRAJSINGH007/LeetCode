@@ -1,74 +1,38 @@
 class Solution {
     
-    public static int findParent(int[] parent, int i){
-        
-        if(parent[i] == i) return i;
-        
-        return findParent(parent, parent[i]);
-        
+    public static void dfs(String s, HashMap<Integer, ArrayList<Integer>> map, boolean[] visited, ArrayList<Integer> list, int curr, ArrayList<Character> ch){
+        if(visited[curr]) return;
+        visited[curr] = true;
+        list.add(curr);
+        ch.add(s.charAt(curr));
+        if(!map.containsKey(curr)) return;
+        ArrayList<Integer> adj = map.get(curr);
+        for(int i = 0; i < adj.size(); i++) dfs(s, map, visited, list, adj.get(i), ch);
+        return;
     }
     
     public String smallestStringWithSwaps(String s, List<List<Integer>> pairs) {
-        
         int n = s.length();
-        char[] ch = s.toCharArray();
-        
-        int[] parent = new int[n];
-        for(int i = 0; i < n; i++){
-            parent[i] = i;
-        }
-        
-        for(int i = 0; i < pairs.size(); i++){
-            int sv = pairs.get(i).get(0);
-            int ev = pairs.get(i).get(1);
-            int p1 = findParent(parent, sv);
-            int p2 = findParent(parent, ev);
-            if(p1 != p2){
-                parent[p1] = p2;
-            }
-        }
-        
         HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
-        
+        for(int i = 0; i < pairs.size(); i++){
+            int s1 = pairs.get(i).get(0), s2 = pairs.get(i).get(1);
+            if(!map.containsKey(s1)) map.put(s1, new ArrayList<>());
+            if(!map.containsKey(s2)) map.put(s2, new ArrayList<>());
+            map.get(s1).add(s2);
+            map.get(s2).add(s1);
+        }
+        boolean[] visited = new boolean[n];
+        char[] ans = new char[n];
         for(int i = 0; i < n; i++){
-            int p = findParent(parent, i);
-            if(!map.containsKey(p)) map.put(p, new ArrayList<>());
-            ArrayList<Integer> curr = map.get(p);
-            curr.add(i);
-        }
-        
-        Set<Integer> keys = map.keySet();
-        
-        for(Integer p : keys){
-            
-            ArrayList<Integer> indexes = map.get(p);
-            
-            boolean[] graph = new boolean[n];
-            int[] count = new int[26];
-            
-            for(int j = 0; j < indexes.size(); j++){
-                graph[indexes.get(j)] = true;
-                count[(int)s.charAt(indexes.get(j)) - 97]++;
+            if(!visited[i]){
+                ArrayList<Integer> l1 = new ArrayList<>();
+                ArrayList<Character> l2 = new ArrayList<>();
+                dfs(s, map, visited, l1, i, l2);
+                Collections.sort(l1);
+                Collections.sort(l2);
+                for(int t = 0; t < l1.size(); t++) ans[l1.get(t)] = l2.get(t);
             }
-            
-            int c = 0;
-            int start = 0;
-            
-            for(int j = 0; j < n; j++){
-                if(graph[j]){
-                    while(count[start] == 0){
-                        start++;
-                    }
-                    c++;
-                    ch[j] = (char)(start + 97);
-                    count[start]--;
-                    if(c == indexes.size()) break;
-                }
-            }
-            
         }
-        
-        return new String(ch);
-        
+        return new String(ans);
     }
 }
