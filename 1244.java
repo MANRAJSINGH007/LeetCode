@@ -34,7 +34,6 @@ class Leaderboard {
         }
         
         return sum;
-        
     }
     
     public void reset(int playerId) {
