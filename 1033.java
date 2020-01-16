@@ -2,17 +2,17 @@ class Solution {
     public int[] numMovesStones(int a, int b, int c) {
         
         int arr[]=new int[3];
-        arr[0]=a;
-        arr[1]=b;
-        arr[2]=c;
+        arr[0] = a;
+        arr[1] = b;
+        arr[2] = c;
         Arrays.sort(arr);
         
-        int x=arr[0];
-        int y=arr[1];
-        int z=arr[2];
+        int x = arr[0];
+        int y = arr[1];
+        int z = arr[2];
         
-        int min=0;
-        int max=z-y-1+y-x-1;
+        int min = 0;
+        int max = z - y - 1 + y - x - 1;
         
         while(true){
             
