@@ -18,8 +18,6 @@ class Solution {
         
         // for(int i = 0;i < n; i++){
         //     for(int j = 0; j < n; j++) System.out.print(edges[i][j] + " ");
-        //     System.out.println();
-        // }
         
         boolean[] visited1 = new boolean[n];
         boolean[] visited2 = new boolean[n];
