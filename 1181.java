@@ -4,7 +4,6 @@ class Solution {
         
         int n = str.length();
         String temp = "";
-        
         ArrayList<String> ans = new ArrayList<>();
         
         for(int i = 0; i < n; i++){
