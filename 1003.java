@@ -2,7 +2,6 @@ class Solution {
     public boolean isValid(String S) {
         
         int n = S.length();
-        
         Stack<Character> stack = new Stack<>();
         
         int i = 0;
