@@ -1,7 +1,6 @@
 class Solution {
     
     static HashSet<List<Integer>> ans;
-    
     public static void func(int[] nums, int n, int i, int j, List<Integer> list){
         
         if(i == n){
