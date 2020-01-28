@@ -16,10 +16,9 @@ class Solution {
             return new int[n][0];
         }
         
-        int[][] ans = new int[n][m];
-        
+        int[][] ans = new int[n][m];   
         Queue<Pair> q = new LinkedList<>();
-        
+     
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
                  ans[i][j] = -1;
