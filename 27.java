@@ -4,8 +4,7 @@ class Solution {
         int n=nums.length;
         int i=0;
         int j=0;
-        
-        while(i<n){
+        while(i<n){ 
             if(nums[i]==val){
                 i++;
             }
