@@ -13,7 +13,6 @@ class Solution {
             
             int sv=trust[i][0];
             int ev=trust[i][1];
-            
             map.put(sv,1);
             
             if(map2.containsKey(ev)){
