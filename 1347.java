@@ -7,7 +7,6 @@ class Solution {
             arr[t.charAt(i) - 'a']--;
         }
         for(int i = 0; i < 26; i++) if(arr[i] > 0) ans += arr[i];
-        
         return ans;
     }
 }
