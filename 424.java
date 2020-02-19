@@ -1,25 +1,19 @@
 class Solution {
     
     public static boolean check(int[] arr, int k){
-        
         int max = 0;
         int index = 0;
         int sum = 0;
-        
         for(int i = 0; i < 26; i++){
             if(arr[i] > max){
                 max = arr[i];
                 index = i;
             }
-            
             sum += arr[i];
         }
-        
         sum -= arr[index];
         if(sum <= k) return true;
-        
         return false;
-        
     }
     
     public int characterReplacement(String s, int k) {
