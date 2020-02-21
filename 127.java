@@ -8,7 +8,6 @@ class Pair{
 }
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        
         int n = wordList.size();
         if(n == 0) return 0;
         HashSet<String> set = new HashSet<>(wordList);
