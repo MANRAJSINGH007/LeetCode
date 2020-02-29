@@ -3,7 +3,6 @@ class Solution {
         
         int n = s.length();
         if(n == 0) return s;
-        
         char[] ch = s.toCharArray();
         
         int prev = 0;
