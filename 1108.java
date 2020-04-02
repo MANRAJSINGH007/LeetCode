@@ -1,6 +1,5 @@
 class Solution {
     public String defangIPaddr(String address) {
-        
         int n = address.length();
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < n; i++){
@@ -8,8 +7,6 @@ class Solution {
             if(curr != '.') sb.append(curr);
             else sb.append("[.]");
         }
-        
         return sb.toString();
-        
     }
 }
