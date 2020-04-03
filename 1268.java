@@ -2,7 +2,7 @@ class TrieNode{
 
 	char data;
 	TrieNode children[];
-    boolean isTerminating;
+        boolean isTerminating;
     int count;
 
 	public TrieNode(char data) {
