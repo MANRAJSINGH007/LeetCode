@@ -1,5 +1,6 @@
 class Solution {
     public int numUniqueEmails(String[] emails) {
+        
         int n = emails.length;
         HashMap<String, HashSet<String>> map = new HashMap<>();
         for(int i = 0; i < n; i++) {
