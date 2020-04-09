@@ -1,15 +1,11 @@
 class Pair{
-    
     int x;
     int y;
     int time;
-    
     Pair(int x, int y, int time){
-        
         this.x=x;
         this.y=y;
         this.time=time;
-        
     }
     
 }
