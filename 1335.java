@@ -18,7 +18,9 @@ class Solution {
         if(d > n) return -1;
         int[][] dp = new int[n][d + 1];
         for(int i = 0; i < n; i++) {
-            for(int j = 0; j < d + 1; j++) dp[i][j] = -1;
+            for(int j = 0; j < d + 1; j++) {
+                dp[i][j] = -1;
+            }
         }
         return function(jobDifficulty, n, 0, d, dp);
     }
