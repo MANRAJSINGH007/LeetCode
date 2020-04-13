@@ -2,13 +2,9 @@ class Solution {
     
     public static int func(int[] arr, int n, int i, int k, int[] dp){
         
-        if(i==n){
-            return 0;
-        }
+        if(i==n) return 0;
         
-        if(dp[i]!=-1){
-            return dp[i];
-        }
+        if(dp[i]!=-1) return dp[i];
         
         int ans=0;
         int max=arr[i];
