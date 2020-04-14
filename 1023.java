@@ -1,6 +1,5 @@
 class Solution {
     public List<Boolean> camelMatch(String[] queries, String pattern) {
-        
         int n = queries.length;
         if(n == 0) return new ArrayList<>();
         List<Boolean> list = new ArrayList<>();
