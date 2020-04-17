@@ -1,20 +1,8 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-class Solution {
-    
+class Solution {    
     static int max = 0;
     static TreeNode ans = null;
     static int count = 0;
-    
     public static void traverse(TreeNode root, int level){
-        
         if(root == null) return ;
         traverse(root.left, level + 1);
         traverse(root.right, level + 1);
@@ -25,15 +13,12 @@ class Solution {
         } else if(level == max){
             count++;
         }
-        
         return ;
     }
     
-    public static int findDeepest(TreeNode root, int level){
-        
+    public static int findDeepest(TreeNode root, int level){      
         if(root == null) return 0;
         if(level == max) return 1;
-        
         int left = findDeepest(root.left, level + 1);
         int right = findDeepest(root.right, level + 1);
         if(ans == null && left + right == count) ans = root;
@@ -41,7 +26,6 @@ class Solution {
     }
     
     public TreeNode subtreeWithAllDeepest(TreeNode root) {
-        
         if(root == null) return root;
         if(root.left == null && root.right == null) return root;
         max = 0;
